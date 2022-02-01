@@ -1,12 +1,6 @@
 name: 'MongoDB Atlas Operations'
 description: 'MongoDB Atlas Operations'
 author: 'Bijoy Francis'
-inputs:
-  log-entry:
-    description: 'Create a log entry'
-outputs:
-  status:
-    description: 'Status of the operation'
 runs:
   using: 'node12'
   main: dist/main.js
