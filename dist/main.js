@@ -28,20 +28,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.run = void 0;
 const core = __importStar(require("@actions/core"));
 const github = __importStar(require("@actions/github"));
-function run() {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            core.info('Hello world!');
-            var message = "Hello World!!!!!!!!!!!!!!!!";
-            console.log(message);
-            core.info(github.context.repo.owner);
-        }
-        catch (err) {
-            core.setFailed(err.message);
-        }
-    });
-}
-exports.run = run;
+const run = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        core.info('Hello world!');
+        var message = "Hello World!!!!!!!!!!!!!!!!";
+        console.log(message);
+        core.info(github.context.repo.owner);
+    }
+    catch (err) {
+        core.setFailed(err.message);
+    }
+});
+exports.default = run;

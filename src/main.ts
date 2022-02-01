@@ -1,7 +1,7 @@
 import * as core from '@actions/core';
 import * as github from '@actions/github';
 
-export async function run() {
+const run = async (): Promise<void> => {
     try {
         core.info('Hello world!');
         var message:string = "Hello World!!!!!!!!!!!!!!!!";
@@ -12,3 +12,5 @@ export async function run() {
         core.setFailed(err.message);
     }
 }
+
+export default run;

@@ -1,1 +1,2 @@
-export declare function run(): Promise<void>;
+declare const run: () => Promise<void>;
+export default run;
