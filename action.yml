@@ -1,6 +1,11 @@
 name: 'MongoDB Atlas Operations'
 description: 'MongoDB Atlas Operations'
 author: 'Bijoy Francis'
+inputs:
+  msg:
+    description: 'Message to be sent'
+    required: true
+    default: 'Hello World'
 runs:
   using: 'node12'
   main: dist/main.js

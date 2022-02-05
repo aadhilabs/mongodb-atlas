@@ -2,11 +2,12 @@
   "name": "mongodb-atlas",
   "version": "1.0.0",
   "description": "MongoDB Atlas operations",
-  "main": "src/main.ts",
+  "main": "src/index.js",
   "scripts": {
-    "build": "npm run setrepo && npm install && npm run tsc",
-    "setrepo": "npm config set registry https://aadhilabs.jfrog.io/artifactory/api/npm/aadhilabs-npm-virtual/",
-    "tsc": "tsc --version && tsc"
+    "lint": "eslint src/**/*.js",
+    "prepare": "ncc build src/index.js -o dist",
+    "build": "npm run setrepo && npm i -g @vercel/ncc && npm install && npm run lint && npm run prepare",
+    "setrepo": "npm config set registry https://aadhilabs.jfrog.io/artifactory/api/npm/aadhilabs-npm-virtual/"
   },
   "repository": {
     "type": "git",
@@ -21,11 +22,13 @@
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0",
-    "body-parser": "^1.19.1",
-    "express": "^4.17.2",
     "mongodb": "^4.3.1"
   },
   "devDependencies": {
-    "typescript": "^4.5.5"
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0"
   }
 }
